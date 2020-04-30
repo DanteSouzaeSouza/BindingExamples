@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BindingExamples</string>
+    <string name="registrar_se">REGISTRAR-SE</string>
+    <string name="nome">Nome</string>
+    <string name="repetir_password">Repetir password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="concordo_com_os_termos_de_uso">Concordo com os Termos de Uso</string>
+    <string name="j_um_membro_entre_aqui">Já é um membro? Entre aqui!</string>
+    <string name="password">Password</string>
+    <string name="cadastro">CADASTRO</string>
+    <string name="cone_sign_up">Ícone Sign-up</string>
+</resources>
