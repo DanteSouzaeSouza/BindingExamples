@@ -1,25 +1,26 @@
-package br.com.theoldpinkeye.bindingexamples;
+package br.com.theoldpinkeye.bindingexamples.models;
 
 public class UserInfo {
 
-    private String name;
+    private String nome;
     private String password;
     private String email;
     private boolean accept;
 
-    public UserInfo(String name, String password, String email, boolean accept) {
-        this.name = name;
+    public UserInfo(String nome, String password, String email, boolean accept) {
+        this.nome = nome;
         this.password = password;
         this.email = email;
         this.accept = accept;
     }
 
-    public String getName() {
-        return name;
+
+    public String getNome() {
+        return nome;
     }
 
-    public UserInfo setName(String name) {
-        this.name = name;
+    public UserInfo setNome(String nome) {
+        this.nome = nome;
         return this;
     }
 
@@ -50,10 +51,11 @@ public class UserInfo {
         return this;
     }
 
+
     @Override
     public String toString() {
         return "UserInfo{" +
-                "name='" + name + '\'' +
+                "nome='" + nome + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", accept=" + accept +
