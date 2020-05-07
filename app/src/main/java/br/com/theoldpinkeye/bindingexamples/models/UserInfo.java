@@ -1,6 +1,10 @@
 package br.com.theoldpinkeye.bindingexamples.models;
 
-public class UserInfo {
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.io.Serializable;
+
+public class UserInfo implements Parcelable {
 
     private String nome;
     private String password;
@@ -15,7 +19,26 @@ public class UserInfo {
     }
 
 
-    public String getNome() {
+  protected UserInfo(Parcel in) {
+    nome = in.readString();
+    password = in.readString();
+    email = in.readString();
+    accept = in.readByte() != 0;
+  }
+
+  public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
+    @Override
+    public UserInfo createFromParcel(Parcel in) {
+      return new UserInfo(in);
+    }
+
+    @Override
+    public UserInfo[] newArray(int size) {
+      return new UserInfo[size];
+    }
+  };
+
+  public String getNome() {
         return nome;
     }
 
@@ -61,4 +84,17 @@ public class UserInfo {
                 ", accept=" + accept +
                 '}';
     }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeString(nome);
+    dest.writeString(password);
+    dest.writeString(email);
+    dest.writeValue(accept);
+  }
 }

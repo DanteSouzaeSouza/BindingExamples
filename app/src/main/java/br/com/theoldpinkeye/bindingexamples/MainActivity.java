@@ -1,5 +1,9 @@
 package br.com.theoldpinkeye.bindingexamples;
 
+
+
+import android.content.Intent;
+import android.os.Parcelable;
 import androidx.appcompat.app.AppCompatActivity;
 import br.com.theoldpinkeye.bindingexamples.models.UserInfo;
 import android.os.Bundle;
@@ -18,6 +22,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    public static final String EXTRA_MESSAGE = "Lista";
     // Fazendo o Binding dos componentes via Butterknife
     @BindView(R.id.editTextPassword) EditText editTextPassword;
     @BindView(R.id.editTextPassRepeat) EditText editTextPassRepeat;
@@ -29,6 +36,18 @@ public class MainActivity extends AppCompatActivity {
     // Criação da List de UserInfo
     List<UserInfo> users;
 
+
+    /** Método chamado quando o usuário clicar no FloatingActionButton */
+    public void sendMessage(View view) {
+        // Código a ser executado quando houver clique
+        Log.e("Eu fui", "clicado");
+
+        Intent intent = new Intent(this, ListActivity.class);
+
+        intent.putParcelableArrayListExtra(EXTRA_MESSAGE, (ArrayList<? extends Parcelable>) users);
+
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Usuário", u.toString());
             }
         });
+
+
     }
 }
