@@ -1,154 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonSignUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/registrar_se"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewMember"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxAgree" />
-
-    <EditText
-        android:id="@+id/editTextNome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="19dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/nome"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
-    <EditText
-        android:id="@+id/editTextPassRepeat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="21dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/repetir_password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/e_mail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/checkBoxAgree"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassRepeat" />
+      android:id="@+id/buttonSignUp"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="20dp"
+      android:layout_marginStart="14dp"
+      android:layout_marginEnd="14dp"
+      android:background="@color/colorPrimary"
+      android:text="@string/registrar_se"
+      android:textColor="@color/colorAccent"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toTopOf="@+id/textViewMember"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/checkBoxAgree" />
 
     <CheckBox
-        android:id="@+id/checkBoxAgree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="17dp"
-        android:text="@string/concordo_com_os_termos_de_uso"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
-
-    <TextView
-        android:id="@+id/textViewMember"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="41dp"
-        android:text="@string/j_um_membro_entre_aqui"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp" />
+      android:id="@+id/checkBoxAgree"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="17dp"
+      android:layout_marginStart="12dp"
+      android:text="@string/concordo_com_os_termos_de_uso"
+      app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPassRepeat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
+      android:id="@+id/editTextPassRepeat"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="21dp"
+      android:layout_marginStart="14dp"
+      android:layout_marginEnd="14dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="@string/repetir_password"
+      android:inputType="textPassword"
+      app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <EditText
+      android:id="@+id/editTextEmail"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="24dp"
+      android:layout_marginStart="14dp"
+      android:layout_marginEnd="14dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="@string/e_mail"
+      android:inputType="textEmailAddress"
+      app:layout_constraintBottom_toTopOf="@+id/checkBoxAgree"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextPassRepeat" />
+
+    <EditText
+      android:id="@+id/editTextNome"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="19dp"
+      android:layout_marginStart="14dp"
+      android:layout_marginEnd="14dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="@string/nome"
+      android:inputType="textPersonName"
+      app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+
+    <EditText
+      android:id="@+id/editTextPassword"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="20dp"
+      android:layout_marginStart="14dp"
+      android:layout_marginEnd="14dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="@string/password"
+      android:inputType="textPassword"
+      app:layout_constraintBottom_toTopOf="@+id/editTextPassRepeat"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
+
+    <TextView
+      android:id="@+id/textViewMember"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="41dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginEnd="1dp"
+      android:text="@string/j_um_membro_entre_aqui"
+      android:textAlignment="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/buttonSignUp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="409dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="98dp"
-        android:background="@color/colorPrimary"
-        android:columnCount="1"
-        android:rowCount="2"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="@string/cadastro"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+      android:id="@+id/gridLayout"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginBottom="17dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginEnd="1dp"
+      android:background="@color/colorPrimary"
+      android:columnCount="1"
+      android:rowCount="2"
+      app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="120sp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/cone_sign_up"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/outline_how_to_reg_white_48" />
+          android:id="@+id/imageView2"
+          android:layout_width="120sp"
+          android:layout_height="192dp"
+          android:contentDescription="@string/cone_sign_up"
+          app:srcCompat="@drawable/outline_how_to_reg_white_48"
+          tools:layout_editor_absoluteX="145dp" />
+
+        <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/cadastro"
+          android:textAlignment="center"
+          android:textColor="@color/colorAccent"
+          android:textSize="20sp"
+          tools:layout_editor_absoluteX="154dp"
+          tools:layout_editor_absoluteY="141dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/floatingActionButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="25dp"
+      android:layout_marginEnd="26dp"
+      android:backgroundTint="#FFFFFF"
+      android:clickable="true"
+      android:focusable="true"
+      android:onClick="sendMessage"
+      app:layout_constraintBottom_toTopOf="@+id/editTextNome"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+      app:srcCompat="@android:drawable/ic_menu_set_as" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

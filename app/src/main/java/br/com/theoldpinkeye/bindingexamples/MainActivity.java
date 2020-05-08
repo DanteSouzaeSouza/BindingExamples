@@ -1,5 +1,7 @@
 package br.com.theoldpinkeye.bindingexamples;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import androidx.appcompat.app.AppCompatActivity;
 import br.com.theoldpinkeye.bindingexamples.models.UserInfo;
 import android.os.Bundle;
@@ -29,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     // Criação da List de UserInfo
     List<UserInfo> users;
 
+    public void sendMessage(View view){
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putParcelableArrayListExtra("Users", (ArrayList<? extends Parcelable>) users);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("Usuário", u.toString());
             }
         });
+
+
     }
 }
