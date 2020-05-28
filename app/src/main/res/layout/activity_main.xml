@@ -41,6 +41,7 @@
       android:layout_marginStart="14dp"
       android:layout_marginEnd="14dp"
       android:autofillHints=""
+      android:backgroundTint="#414040"
       android:ems="10"
       android:hint="@string/repetir_password"
       android:inputType="textPassword"
@@ -113,11 +114,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/gridLayout"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
+      android:layout_width="411dp"
+      android:layout_height="220dp"
       android:layout_marginBottom="17dp"
-      android:layout_marginStart="1dp"
-      android:layout_marginEnd="1dp"
       android:background="@color/colorPrimary"
       android:columnCount="1"
       android:rowCount="2"
@@ -128,11 +127,19 @@
 
         <ImageView
           android:id="@+id/imageView2"
-          android:layout_width="120sp"
-          android:layout_height="192dp"
+          android:layout_width="116dp"
+          android:layout_height="116dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginBottom="16dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
           android:contentDescription="@string/cone_sign_up"
-          app:srcCompat="@drawable/outline_how_to_reg_white_48"
-          tools:layout_editor_absoluteX="145dp" />
+          app:layout_constraintBottom_toTopOf="@+id/textView2"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/outline_how_to_reg_white_48" />
 
         <TextView
           android:id="@+id/textView2"
@@ -142,8 +149,12 @@
           android:textAlignment="center"
           android:textColor="@color/colorAccent"
           android:textSize="20sp"
-          tools:layout_editor_absoluteX="154dp"
-          tools:layout_editor_absoluteY="141dp" />
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView2"
+          app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/floatingActionButton"
@@ -151,14 +162,15 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="25dp"
       android:layout_marginEnd="26dp"
-      android:backgroundTint="#FFFFFF"
+      android:background="@color/colorPrimary"
+      android:backgroundTint="@color/colorPrimary"
       android:clickable="true"
       android:focusable="true"
       android:onClick="sendMessage"
       app:layout_constraintBottom_toTopOf="@+id/editTextNome"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-      app:srcCompat="@android:drawable/ic_menu_set_as" />
+      app:srcCompat="@android:drawable/ic_dialog_info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
