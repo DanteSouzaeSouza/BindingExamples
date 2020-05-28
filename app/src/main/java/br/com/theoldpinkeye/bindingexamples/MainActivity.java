@@ -17,6 +17,11 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -144,4 +149,71 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Dados colocados no array users", users.toString());
         }
     }
+
+    // Checando se o arquivo existe antes de salvarmos o conteúdo
+    public boolean isFilePresent(Context context, String filename) {
+        // para checar a existência do arquivo, precisamos do caminho onde ele possívelmente estaria
+        // Esse caminho é dado pelo Context da aplicação
+        String path = context.getFilesDir().getAbsolutePath() + "/" + filename;
+        // achando ou não, jogue numa variável File
+        File file = new File(path);
+
+        // Existindo arquivo retorna true, mas se File estiver vazia, retorna false;
+        return file.exists();
+    }
+
+    // Criando método para salvamento/criação do arquivo no armazenamento
+    private boolean createFile(Context context, String fileName, String jsonString) {
+        try {
+            // criando a stream de saída do arquivo
+            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            // se a string do Json gerado não estiver vazia, gravar os Bytes na FileOutputStream
+            if (jsonString != null) {
+                // adicionando os dados à FileOutputStream
+                fos.write(jsonString.getBytes());
+            }
+            // fechando a FileOutputStream
+            fos.close();
+            // Se deu tudo certo, retorna true
+            return true;
+
+        } catch (Exception ex) {
+            // tratando a exceção
+            // mandando imprimir a exceção no Logcat
+            ex.printStackTrace();
+            // retornando false caso haja erro
+            return false;
+        }
+    }
+
+    // Criando método para leitura do arquivo com os dados de usuários
+    private String readFile(Context context, String fileName){
+        try {
+            // Chamando e abrindo o arquivo
+            FileInputStream fileInputStream = context.openFileInput(fileName);
+            // lendo conteúdo do arquivo
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            // processar o conteúdo do arquivo
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            // criando um StringBuilder para receber os dados lidos e formar a string completa
+            StringBuilder stringBuilder = new StringBuilder();
+            // criando variável temporária para receber as linhas do arquivo
+            String line;
+            // enquanto houver linhas no arquivo, adicione-as ao StringBuilder
+            while ((line = bufferedReader.readLine()) != null){
+                // adicionando cada linha ao StringBuilder
+                stringBuilder.append(line);
+            }
+            // retornando a string gerada pelo StringBuilder
+            return stringBuilder.toString();
+
+        } catch (Exception ex){
+            // mostrando o conteúdo da exception
+            ex.printStackTrace();
+            // retornando null caso não consiga ler o arquivo
+            return null;
+        }
+
+    }
+
 }
