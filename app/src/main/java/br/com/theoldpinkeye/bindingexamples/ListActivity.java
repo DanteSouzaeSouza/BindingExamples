@@ -26,9 +26,16 @@ public class ListActivity extends AppCompatActivity {
     // atribuindo o "Extra" com o ArrayList à List criada aqui
     users = intent.getParcelableArrayListExtra("Users");
 
+
+    // montando a tela
+    // instanciando o adapter que fará a ligação dos dados do ArrayList com os elementos da tela
     MeuAdapter adapter = new MeuAdapter(this, users);
+    // instanciar o ListView onde serão jogados os dados
     ListView lista = findViewById(R.id.usersListView);
+    // conectando o LitView com o adaptador de dados
     lista.setAdapter(adapter);
+
+
     // Fazendo o BINDING da toolbar do layout com o código java
     Toolbar toolbar = findViewById(R.id.list_toolbar);
 
@@ -46,7 +53,5 @@ public class ListActivity extends AppCompatActivity {
     for (UserInfo u: users){
       Log.d("Dado", u.toString());
     }
-
-    // TODO: Criar a visualização desses dados usando uma ListView com um layout próprio para os itens da listview (criado)
   }
 }
